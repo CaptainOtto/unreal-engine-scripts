@@ -15,6 +15,8 @@ set UPROJECT_PATH=%PROJECT_DIR%\%PROJECT%.uproject
 set UE_DIR=D:\%UE_VERS%
 set EDITOR_EXE=%UE_DIR%\Engine\Binaries\Win64\UnrealEditor-Cmd.exe
 
+echo Cooking content for project, %PROJECT%
+
 CALL "%EDITOR_EXE%" "%UPROJECT_PATH%" -run-cook -targetplatform-windowsNoEditor
 
 pause
