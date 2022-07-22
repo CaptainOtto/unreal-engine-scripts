@@ -1,9 +1,11 @@
 
 @echo off
 
+:: Project Name of your project.
 set PROJECT=ProjectA
 set UE_VERS=UE_5.0
 set ROOTDIR=%~dp0
+
 :: Path from current script to root of your game, location of uproject etc.
 set PATHFROMSCRIPTTOGAMEFOLDER=\..\..\Game\
 set ROOTDIR=%ROOTDIR:~0,-1%%PATHFROMSCRIPTTOGAMEFOLDER%
