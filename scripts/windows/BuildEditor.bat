@@ -1,0 +1,23 @@
+@echo off
+
+:: Project Name of your project.
+set PROJECT=ProjectA
+set UE_VERS=UE_5.0
+set ROOTDIR=%~dp0
+
+:: Path from current script to root of your game, location of uproject etc.
+set PATHFROMSCRIPTTOGAMEFOLDER=\..\..\Game\
+set ROOTDIR=%ROOTDIR:~0,-1%%PATHFROMSCRIPTTOGAMEFOLDER%
+
+set PROJECT_DIR=%ROOTDIR%
+set UPROJECT_PATH=%PROJECT_DIR%\%PROJECT%.uproject
+
+set UE_DIR=D:\%UE_VERS%
+set EDITOR_EXE=%UE_DIR%\Engine\Build\BatchFiles\Build.bat
+set BUILD_MODE=Development
+
+echo Building Editor for project %PROJECT%
+
+call "%EDITOR_EXE%" %PROJECT%Editor Win64 %BUILD_MODE% "%UPROJECT_PATH%" -waitmutex -NoHotReload
+
+pause
