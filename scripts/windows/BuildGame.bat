@@ -4,7 +4,9 @@
 set PROJECT=ProjectA
 set UE_VERS=UE_5.0
 set ROOTDIR=%~dp0
-set ROOTDIR=%ROOTDIR:~0,-1%\..\..\Game\
+:: Path from current script to root of your game, location of uproject etc.
+set PATHFROMSCRIPTTOGAMEFOLDER=\..\..\Game\
+set ROOTDIR=%ROOTDIR:~0,-1%%PATHFROMSCRIPTTOGAMEFOLDER%
 
 set PROJECT_DIR=%ROOTDIR%
 set UPROJECT_PATH=%PROJECT_DIR%\%PROJECT%.uproject
