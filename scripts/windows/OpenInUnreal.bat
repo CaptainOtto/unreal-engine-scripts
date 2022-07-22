@@ -1,6 +1,7 @@
 
 @echo off
 
+:: Project Name of your project.
 set PROJECT=ProjectA
 set ROOTDIR=%~dp0
 
@@ -8,9 +9,10 @@ set ROOTDIR=%~dp0
 set PATHFROMSCRIPTTOGAMEFOLDER=\..\..\Game\
 set ROOTDIR=%ROOTDIR:~0,-1%%PATHFROMSCRIPTTOGAMEFOLDER%
 
-:: Project Name of your project.
 
 set PROJECT_DIR=%ROOTDIR%
 set UPROJECT_PATH=%PROJECT_DIR%%PROJECT%.uproject
+
+echo Opening %PROJECT% in unreal.
 
 start %UPROJECT_PATH%
